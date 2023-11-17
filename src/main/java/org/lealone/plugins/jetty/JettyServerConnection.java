@@ -9,10 +9,10 @@ import java.nio.ByteBuffer;
 import java.nio.channels.SocketChannel;
 
 import org.eclipse.jetty.io.AbstractConnection;
+import org.lealone.db.scheduler.Scheduler;
 import org.lealone.net.NetBuffer;
 import org.lealone.net.TransferConnection;
 import org.lealone.net.WritableChannel;
-import org.lealone.server.Scheduler;
 
 public class JettyServerConnection extends TransferConnection {
 
