@@ -169,6 +169,8 @@ public class JettyServer extends AsyncServer<JettyServerConnection> implements H
         try {
             connector.setServerChannel(serverChannel);
             server.start();
+            // 放到这里注册，否认调度线程执行select操作后就不能修改serverChannel.configureBlocking(false);
+            super.registerAccepter(serverChannel);
         } catch (Exception e) {
             logger.error("Failed to start jetty server", e);
         }
@@ -222,6 +224,7 @@ public class JettyServer extends AsyncServer<JettyServerConnection> implements H
     @Override
     public void registerAccepter(ServerSocketChannel serverChannel) {
         this.serverChannel = serverChannel;
-        super.registerAccepter(serverChannel);
+        // 延迟注册
+        // super.registerAccepter(serverChannel);
     }
 }

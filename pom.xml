@@ -46,14 +46,12 @@
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-slf4j-impl</artifactId>
-            <version>2.17.1</version>
-            <scope>test</scope>
+            <version>2.17.1</version> 
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
             <version>1.7.9</version>
-            <scope>test</scope>
         </dependency>
     </dependencies>
 
@@ -103,6 +101,8 @@
                             <artifactSet>
                                 <includes>
                                     <include>org.lealone.plugins:lealone-service</include>
+                                    <include>org.slf4j:slf4j-api</include>
+                                    <include>org.apache.logging.log4j:log4j-slf4j-impl</include>
                                     <include>org.eclipse.jetty:*</include>
                                 </includes>
                             </artifactSet>
