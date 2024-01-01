@@ -3,7 +3,7 @@
  * Licensed under the Server Side Public License, v 1.
  * Initial Developer: zhh
  */
-package org.lealone.plugins.jetty.test;
+package com.lealone.plugins.jetty.test;
 
 import java.nio.ByteBuffer;
 
@@ -14,7 +14,7 @@ import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.server.ServerConnector;
 import org.eclipse.jetty.util.Callback;
 import org.eclipse.jetty.util.thread.QueuedThreadPool;
-import org.lealone.main.Lealone;
+import com.lealone.main.Lealone;
 
 public class JettyServerStart {
 

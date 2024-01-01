@@ -3,7 +3,7 @@
  * Licensed under the Server Side Public License, v 1.
  * Initial Developer: zhh
  */
-package org.lealone.plugins.jetty;
+package com.lealone.plugins.jetty;
 
 import java.io.File;
 import java.nio.channels.ServerSocketChannel;
@@ -14,17 +14,17 @@ import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.server.handler.ContextHandler;
 import org.eclipse.jetty.server.handler.ResourceHandler;
 import org.eclipse.jetty.util.thread.QueuedThreadPool;
-import org.lealone.common.exceptions.ConfigException;
-import org.lealone.common.logging.Logger;
-import org.lealone.common.logging.LoggerFactory;
-import org.lealone.common.util.CaseInsensitiveMap;
-import org.lealone.common.util.MapUtils;
-import org.lealone.db.ConnectionInfo;
-import org.lealone.db.scheduler.Scheduler;
-import org.lealone.net.WritableChannel;
-import org.lealone.plugins.service.http.HttpRouter;
-import org.lealone.plugins.service.http.HttpServer;
-import org.lealone.server.AsyncServer;
+import com.lealone.common.exceptions.ConfigException;
+import com.lealone.common.logging.Logger;
+import com.lealone.common.logging.LoggerFactory;
+import com.lealone.common.util.CaseInsensitiveMap;
+import com.lealone.common.util.MapUtils;
+import com.lealone.db.ConnectionInfo;
+import com.lealone.db.scheduler.Scheduler;
+import com.lealone.net.WritableChannel;
+import com.lealone.plugins.service.http.HttpRouter;
+import com.lealone.plugins.service.http.HttpServer;
+import com.lealone.server.AsyncServer;
 
 public class JettyServer extends AsyncServer<JettyServerConnection> implements HttpServer {
 
@@ -66,7 +66,7 @@ public class JettyServer extends AsyncServer<JettyServerConnection> implements H
     public void setJdbcUrl(String jdbcUrl) {
         this.jdbcUrl = jdbcUrl;
         config.put("jdbc_url", jdbcUrl);
-        System.setProperty(org.lealone.db.Constants.JDBC_URL_KEY, jdbcUrl);
+        System.setProperty(com.lealone.db.Constants.JDBC_URL_KEY, jdbcUrl);
     }
 
     @Override
@@ -139,7 +139,7 @@ public class JettyServer extends AsyncServer<JettyServerConnection> implements H
             String routerStr = config.get("router");
             if (routerStr != null) {
                 try {
-                    router = org.lealone.common.util.Utils.newInstance(routerStr);
+                    router = com.lealone.common.util.Utils.newInstance(routerStr);
                 } catch (Exception e) {
                     throw new ConfigException("Failed to load router: " + routerStr, e);
                 }

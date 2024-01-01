@@ -3,7 +3,7 @@
  * Licensed under the Server Side Public License, v 1.
  * Initial Developer: zhh
  */
-package org.lealone.plugins.jetty;
+package com.lealone.plugins.jetty;
 
 import java.io.IOException;
 import java.net.Socket;

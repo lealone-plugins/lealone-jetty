@@ -3,10 +3,10 @@
  * Licensed under the Server Side Public License, v 1.
  * Initial Developer: zhh
  */
-package org.lealone.plugins.jetty;
+package com.lealone.plugins.jetty;
 
-import org.lealone.plugins.service.http.HttpServerEngine;
-import org.lealone.server.ProtocolServer;
+import com.lealone.plugins.service.http.HttpServerEngine;
+import com.lealone.server.ProtocolServer;
 
 public class JettyServerEngine extends HttpServerEngine {
 

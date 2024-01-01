@@ -26,7 +26,7 @@
 
 ```sql
 create plugin jetty
-  implement by 'org.lealone.plugins.jetty.JettyServerEngine' 
+  implement by 'com.lealone.plugins.jetty.JettyServerEngine' 
   class path 'E:\lealone\lealone-plugins\jetty\target\lealone-jetty-plugin-6.0.0.jar'
   parameters (port=8080,web_root='E:\lealone\lealone-plugins\jetty\src\test\resources\web');
  
